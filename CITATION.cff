@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as follows."
+title: "Las Bambas Conflict Analysis"
+type: software
+authors:
+  - given-names: Rodrigo
+    family-names: Caballero Chocano
+    email: 66542929+Fergos14@users.noreply.github.com
+version: 0.1.0
+date-released: 2026-03-22
+abstract: "Reproducible notebooks and reusable Python utilities for the spatial, temporal, and typological analysis of the Las Bambas conflict case."
