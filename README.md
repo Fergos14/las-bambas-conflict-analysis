@@ -157,4 +157,4 @@ Notes:
 
 ## Citation
 
-The repository includes a `CITATION.cff` file so citation metadata is available in a standard format for archival or public release.
+The repository includes a `CITATION.cff` file with the metadata of the associated study so citation information is available in a standard format for archival or public release.

@@ -1,11 +1,17 @@
 cff-version: 1.2.0
-message: "If you use this repository, please cite it as follows."
-title: "Las Bambas Conflict Analysis"
+message: "If you use this repository, please cite the associated study as follows."
+title: "Dynamic Conflict Footprints and Land-System Transformation in Large-Scale Mining: Evidence from Las Bambas, Peru"
 type: software
 authors:
+  - given-names: Soledad
+    family-names: Espezua
+    email: s.espezual@up.edu.pe
   - given-names: Rodrigo
-    family-names: Caballero Chocano
-    email: 66542929+Fergos14@users.noreply.github.com
+    family-names: Caballero
+  - given-names: Alvaro
+    family-names: Talavera
+  - given-names: Luciano
+    family-names: Stucchi
 version: 0.1.0
 date-released: 2026-03-22
-abstract: "Reproducible notebooks and reusable Python utilities for the spatial, temporal, and typological analysis of the Las Bambas conflict case."
+abstract: "Reproducible notebooks and reusable Python utilities accompanying the study on dynamic conflict footprints and land-system transformation in the Las Bambas mining case in Peru."
