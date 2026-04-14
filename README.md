@@ -7,8 +7,8 @@ This repository documents the analytical workflow behind the reported results fo
 ```text
 .
 |-- Code/
-|   |-- Cluster_AssociationRules.ipynb
-|   `-- Spatial_Analysis.ipynb
+|   |-- Cluster_AssociationRules.ipynb <--- Script that reproduces the exploratory analysis
+|   `-- Spatial_Analysis.ipynb <--- Script that reproduces the polygon construction and Mapbiomas analysis
 |-- src/
 |   `-- las_bambas_analysis/
 |       |-- cluster_plots.py
