@@ -18,6 +18,7 @@ This repository documents the analytical workflow behind the reported results fo
 |       `-- water.py
 |-- Data/
 |   |-- Conflicto_bambas.csv
+|   |-- metadata.csv <--- Data dictionary documenting variables, categories, and their meanings
 |   |-- ReporteFechaxConflicto_bambas.csv
 |   |-- geometriasxcasoxminabambas.gpkg
 |   `-- Área en Operación Minera.geojson
