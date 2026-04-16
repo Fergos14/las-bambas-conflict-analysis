@@ -4,6 +4,8 @@ from pathlib import Path
 
 import geopandas as gpd
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 
 
 def export_minimal_polygon_map(
@@ -138,3 +140,88 @@ def export_minimal_polygon_map(
         print(f"PNG saved: {png_path}")
 
     plt.close(fig)
+
+
+def plot_yearly_area_sensitivity(
+    yearly_area_df,
+    ratio_by_year,
+    base_name="sensitivity_analysis",
+    out_dir=".",
+    show=False,
+    save_pdf=True,
+    save_png=False,
+    dpi_pdf=600,
+    dpi_png=300,
+):
+    """Export yearly area distributions and highlight the selected ratio per year."""
+    if yearly_area_df is None:
+        raise TypeError("yearly_area_df is required")
+    if ratio_by_year is None:
+        raise TypeError("ratio_by_year is required")
+
+    required_columns = {"Year", "area_km2", "ratio"}
+    missing_columns = required_columns.difference(yearly_area_df.columns)
+    if missing_columns:
+        missing = ", ".join(sorted(missing_columns))
+        raise KeyError(f"Missing required column(s): {missing}")
+
+    df = yearly_area_df.copy()
+    df["Year"] = pd.to_numeric(df["Year"], errors="coerce")
+    df["area_km2"] = pd.to_numeric(df["area_km2"], errors="coerce")
+    df["ratio"] = pd.to_numeric(df["ratio"], errors="coerce")
+    df = df.dropna(subset=["Year", "area_km2", "ratio"])
+
+    if df.empty:
+        raise ValueError("No valid rows were found after cleaning Year, area_km2, and ratio.")
+
+    df["Year"] = df["Year"].astype(int)
+
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    sorted_years = sorted(df["Year"].unique())
+    data = [df.loc[df["Year"] == year, "area_km2"].to_numpy() for year in sorted_years]
+
+    fig, ax = plt.subplots(figsize=(10, 8))
+    fig.patch.set_facecolor("white")
+    ax.set_facecolor("white")
+    ax.boxplot(data, vert=False, tick_labels=sorted_years)
+
+    for index, year in enumerate(sorted_years, start=1):
+        target_ratio = ratio_by_year.get(year)
+        if target_ratio is None:
+            continue
+
+        year_rows = df.loc[df["Year"] == year]
+        matched_rows = year_rows.loc[np.isclose(year_rows["ratio"], target_ratio)]
+        if matched_rows.empty:
+            continue
+
+        x_coord = matched_rows["area_km2"].iloc[0]
+        ax.plot(x_coord, index, "o", color="#1f3b73", markersize=8)
+        ax.text(x_coord, index + 0.15, f"{target_ratio:.1f}", fontsize=9, color="#1f3b73")
+
+    ax.set_xlabel("Territory size (km$^2$)")
+    ax.set_ylabel("Year")
+    ax.set_title("Area distribution by year")
+    ax.grid(True, axis="x", alpha=0.3)
+
+    plt.tight_layout()
+
+    pdf_path = None
+    png_path = None
+
+    if save_pdf:
+        pdf_path = out_dir / f"{base_name}.pdf"
+        plt.savefig(pdf_path, dpi=dpi_pdf, bbox_inches="tight")
+
+    if save_png:
+        png_path = out_dir / f"{base_name}.png"
+        plt.savefig(png_path, dpi=dpi_png, bbox_inches="tight")
+
+    if show:
+        plt.show()
+    else:
+        plt.close(fig)
+
+    return {"pdf": pdf_path, "png": png_path}

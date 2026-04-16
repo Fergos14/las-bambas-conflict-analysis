@@ -1,0 +1,60 @@
+file_name,dataset_scope,layer,variable,definition
+geometriasxcasoxminaxbambas.gpkg,spatial,Carretera,CLAVEID,Unique identifier of the road involved in the conflict reported by the Defensoría del Pueblo.
+geometriasxcasoxminaxbambas.gpkg,spatial,Carretera,NOMBRE,Name of the road involved in the conflict reported by the Defensoría del Pueblo.
+geometriasxcasoxminaxbambas.gpkg,spatial,Carretera,CAPA,Layer identifier corresponding to carretera.
+geometriasxcasoxminaxbambas.gpkg,spatial,Carretera,Grupo,Unique identifier of the conflict reported by the Defensoría del Pueblo; redundant with GRUPOID.
+geometriasxcasoxminaxbambas.gpkg,spatial,Carretera,GRUPOID,Unique identifier of the conflict reported by the Defensoría del Pueblo; redundant with Grupo.
+geometriasxcasoxminaxbambas.gpkg,spatial,Centros_Poblados,UBIGEO,"Unique identifier of the populated center according to the Instituto Nacional de Estadística e Informática (INEI), up to the 2017 census."
+geometriasxcasoxminaxbambas.gpkg,spatial,Centros_Poblados,Grupo,Unique identifier of the conflict reported by the Defensoría del Pueblo; redundant with GRUPOID.
+geometriasxcasoxminaxbambas.gpkg,spatial,Centros_Poblados,GRUPOID,Unique identifier of the conflict reported by the Defensoría del Pueblo; redundant with Grupo.
+geometriasxcasoxminaxbambas.gpkg,spatial,Centros_Poblados,AREA_17,Type of populated center. Urban = 1; Rural = 2.
+geometriasxcasoxminaxbambas.gpkg,spatial,Centros_Poblados,Población Total,Total number of people residing in the populated center.
+geometriasxcasoxminaxbambas.gpkg,spatial,Centros_Poblados,densidad_poblacional,"Population density of the district to which the populated center belongs, measured in persons per square kilometer."
+geometriasxcasoxminaxbambas.gpkg,spatial,Mina,CLAVEID,Unique identifier of the mine involved in the conflict reported by the Defensoría del Pueblo.
+geometriasxcasoxminaxbambas.gpkg,spatial,Mina,Minas_list,Name of the mine.
+geometriasxcasoxminaxbambas.gpkg,spatial,Mina,CAPA,Layer identifier corresponding to mina.
+geometriasxcasoxminaxbambas.gpkg,spatial,Puente,CLAVEID,Unique identifier of the bridge involved in the conflict reported by the Defensoría del Pueblo.
+geometriasxcasoxminaxbambas.gpkg,spatial,Puente,NOMBRE,Name of the bridge involved in the conflict.
+geometriasxcasoxminaxbambas.gpkg,spatial,Puente,Grupo,Unique identifier of the conflict reported by the Defensoría del Pueblo; redundant with GRUPOID.
+geometriasxcasoxminaxbambas.gpkg,spatial,Puente,GRUPOID,Unique identifier of the conflict reported by the Defensoría del Pueblo; redundant with Grupo.
+geometriasxcasoxminaxbambas.gpkg,spatial,Puente,CAPA,Layer identifier corresponding to Puente.
+geometriasxcasoxminaxbambas.gpkg,spatial,Rio_Quebrada,CLAVEID,Unique identifier of the river/stream involved in the conflict reported by the Defensoría del Pueblo.
+geometriasxcasoxminaxbambas.gpkg,spatial,Rio_Quebrada,NOMBRE,Name of the river/stream involved in the conflict.
+geometriasxcasoxminaxbambas.gpkg,spatial,Rio_Quebrada,Grupo,Unique identifier of the conflict reported by the Defensoría del Pueblo; redundant with GRUPOID.
+geometriasxcasoxminaxbambas.gpkg,spatial,Rio_Quebrada,GRUPOID,Unique identifier of the conflict reported by the Defensoría del Pueblo; redundant with Grupo.
+geometriasxcasoxminaxbambas.gpkg,spatial,Rio_Quebrada,CAPA,Layer identifier corresponding to río/quebrada.
+Conflicto_bambas.csv,atemporal,,Grupo,Unique identifier of the conflict reported by the Defensoría del Pueblo; redundant with GrupoID.
+Conflicto_bambas.csv,atemporal,,GrupoID,Unique identifier of the conflict reported by the Defensoría del Pueblo; redundant with Grupo.
+Conflicto_bambas.csv,atemporal,,EsIlegal,"Indicates whether the conflict is related to illegal mining, explicitly identified as such."
+Conflicto_bambas.csv,atemporal,,EsInformal,"Indicates whether the conflict is related to informal mining, explicitly identified as such."
+Conflicto_bambas.csv,atemporal,,PrimeraFecha_min,Date of the Defensoría del Pueblo report in which the conflict first appeared.
+Conflicto_bambas.csv,atemporal,,UltimaFecha_max,Date of the Defensoría del Pueblo report in which the conflict last appeared.
+Conflicto_bambas.csv,atemporal,,Departamento,Department of Peru in which the Defensoría del Pueblo located the conflict.
+Conflicto_bambas.csv,atemporal,,Tipo,Type of conflict according to the Defensoría del Pueblo.
+Conflicto_bambas.csv,atemporal,,Caso,General description of the conflict.
+Conflicto_bambas.csv,atemporal,,Actores,"Actors involved in the conflict. This corresponds to the earliest version in which the Defensoría del Pueblo identified the parties involved; it was later replaced by a more detailed classification into primary, secondary, and tertiary actors."
+Conflicto_bambas.csv,atemporal,,Actores primarios,Primary actors involved in the conflict.
+Conflicto_bambas.csv,atemporal,,Actores secundarios,Secondary actors involved in the conflict.
+Conflicto_bambas.csv,atemporal,,Actores terciarios,Tertiary actors involved in the conflict.
+Conflicto_bambas.csv,atemporal,,Pollution and Environmental Damage,"It refers to the complaints made by local communities regarding actual, alleged, or anticipated pollution explicitly caused by mining companies (e.g., water sources, spills, soil degradation, air pollution, noise, etc.). One-hot encoded variable. Takes the value 1 if this factor was identified as a root cause of the conflict, and 0 otherwise."
+Conflicto_bambas.csv,atemporal,,Material Transport Issues,"This subcategory refers to complaints from communities regarding the means of transport used for mining, operational, or logistical materials. These communities are often not located near the mining extraction area itself; however, they are strongly affected by these transportation activities. The means of transport typically include mineral pipelines or trucks. One-hot encoded variable. Takes the value 1 if this factor was identified as a root cause of the conflict, and 0 otherwise."
+Conflicto_bambas.csv,atemporal,,Community-Mine Disputes,"It refers to disputes between communities and mining projects over access to, control of, or use of water, land, or protected areas. One-hot encoded variable. Takes the value 1 if this factor was identified as a root cause of the conflict, and 0 otherwise."
+Conflicto_bambas.csv,atemporal,,Resource Competition,"This subcategory refers to competition between localities over resources (e.g., land, water), resulting from nearby mining operations. One-hot encoded variable. Takes the value 1 if this factor was identified as a root cause of the conflict, and 0 otherwise."
+Conflicto_bambas.csv,atemporal,,Displacement and Relocation,"This subcategory refers to complaints arising from the displacement of communities due to the need to implement mining projects in those territories. One-hot encoded variable. Takes the value 1 if this factor was identified as a root cause of the conflict, and 0 otherwise."
+Conflicto_bambas.csv,atemporal,,Illegal/Informal Mining,"This subcategory refers to conflicts of interest between informal or illegal miners and mining companies in the studied projects, stemming from disputes over territorial exploitation. One-hot encoded variable. Takes the value 1 if this factor was identified as a root cause of the conflict, and 0 otherwise."
+Conflicto_bambas.csv,atemporal,,Unfulfilled Company Commitments,"It refers to the breach of commitments—whether formal or implicit—or unmet social expectations related to the provision of goods, services, infrastructure, or employment by mining companies. One-hot encoded variable. Takes the value 1 if this factor was identified as a root cause of the conflict, and 0 otherwise."
+Conflicto_bambas.csv,atemporal,,Poor Public Works Execution,"This includes cases involving the deficient implementation—or complete lack—of public works financed with mining revenues, particularly in regions that receive mining canon funds. One-hot encoded variable. Takes the value 1 if this factor was identified as a root cause of the conflict, and 0 otherwise."
+Conflicto_bambas.csv,atemporal,,Decisions Without Community Consent,"This category includes decisions that affect communities without their consent or participation, whether due to the absence, manipulation, or contestation of processes such as prior consultation, authorizations, concessions, or the implementation of projects before the conflict arose. One-hot encoded variable. Takes the value 1 if this factor was identified as a root cause of the conflict, and 0 otherwise."
+Conflicto_bambas.csv,atemporal,,Exclusion from EIA Impact Area,"Lack of inclusion or recognition of localities as affected areas within the direct or indirect area of influence of the mine (as defined by the Environmental Impact Assessment), due to gaps, omissions, or underestimation of impacts in the environmental studies. One-hot encoded variable. Takes the value 1 if this factor was identified as a root cause of the conflict, and 0 otherwise."
+ReporteFechaxConflicto_bambas.csv,monthly_update,,Hechos del mes,Describes what occurred in the conflict during the month corresponding to the monthly report issued by the Defensoría del Pueblo.
+ReporteFechaxConflicto_bambas.csv,monthly_update,,Dialogo,Indicates whether dialogue took place during the corresponding month.
+ReporteFechaxConflicto_bambas.csv,monthly_update,,Actualización,"Indicates whether the conflict is new, reactivated, or had no update during the reporting month."
+ReporteFechaxConflicto_bambas.csv,monthly_update,,Estado,"Status of the conflict in the reporting month. Possible values include Activo, Latente, Inactivo, or Resuelto."
+ReporteFechaxConflicto_bambas.csv,monthly_update,,Motivo de fusión,Describes the reason why the Defensoría del Pueblo decided to merge the conflict with another one.
+ReporteFechaxConflicto_bambas.csv,monthly_update,,Motivo de pase a latente,Describes the reason why the Defensoría del Pueblo changed the conflict status to latent.
+ReporteFechaxConflicto_bambas.csv,monthly_update,,Motivo de pase a inactivo,Describes the reason why the Defensoría del Pueblo changed the conflict status to inactive.
+ReporteFechaxConflicto_bambas.csv,monthly_update,,Forma de resolución,Describes the manner in which the conflict was resolved.
+ReporteFechaxConflicto_bambas.csv,monthly_update,,NombreReportePDFModificado,Name of the PDF file corresponding to the monthly report published by the Defensoría del Pueblo on its website.
+ReporteFechaxConflicto_bambas.csv,monthly_update,,FechaReporte,Date corresponding to the month in which the Defensoría del Pueblo report was issued.
+ReporteFechaxConflicto_bambas.csv,monthly_update,,NumeroEdicion,Monthly issue number of the Defensoría del Pueblo report.
+ReporteFechaxConflicto_bambas.csv,monthly_update,,GrupoID,Unique identifier of the conflict reported by the Defensoría del Pueblo.

@@ -13,6 +13,7 @@ class SpatialPaths:
     polygon_maps_dir: Path
     land_cover_dir: Path
     land_cover_class_maps_dir: Path
+    sensitivity_analysis_dir: Path
     transitions_dir: Path
     water_figures_dir: Path
     water_tiles_dir: Path
@@ -81,6 +82,7 @@ def build_project_paths(project_root: Path) -> ProjectPaths:
         polygon_maps_dir=spatial_maps_dir / "poligono_anual_bambas",
         land_cover_dir=spatial_figures_dir / "land_cover",
         land_cover_class_maps_dir=spatial_maps_dir / "land_cover_clases_journal",
+        sensitivity_analysis_dir=spatial_maps_dir / "sensitivity_analysis",
         transitions_dir=spatial_figures_dir / "transiciones",
         water_figures_dir=spatial_figures_dir / "agua",
         water_tiles_dir=spatial_intermediate_dir / "agua_tiles_out",
@@ -119,6 +121,7 @@ def ensure_output_directories(project_paths: ProjectPaths) -> ProjectPaths:
         project_paths.spatial.polygon_maps_dir,
         project_paths.spatial.land_cover_dir,
         project_paths.spatial.land_cover_class_maps_dir,
+        project_paths.spatial.sensitivity_analysis_dir,
         project_paths.spatial.transitions_dir,
         project_paths.spatial.water_figures_dir,
         project_paths.spatial.water_tiles_dir,
